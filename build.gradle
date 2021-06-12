@@ -9,6 +9,7 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -16,7 +17,8 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
     implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
-    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
+    //compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
+    implementation group: 'com.jfoenix', name: 'jfoenix', version: '9.0.1'  //jfoenix
 
     implementation 'com.itextpdf:itext7-core:7.1.15'
     compile group: 'org.apache.logging.log4j',name: 'log4j-api', version: '2.14.1'
@@ -25,6 +27,17 @@ dependencies {
 
     implementation group: 'org.apache.poi', name: 'poi', version: '5.0.0'
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
+
+    //iconos provisional xd
+    compile 'de.jensd:fontawesomefx-commons:9.0.0'
+    compile 'de.jensd:fontawesomefx-controls:9.0.0'
+    compile 'de.jensd:fontawesomefx-emojione:3.1.1-9'
+    compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-9'
+    compile 'de.jensd:fontawesomefx-icons525:4.2.0-9'
+    compile 'de.jensd:fontawesomefx-materialdesignfont:2.0.26-9'
+    compile 'de.jensd:fontawesomefx-materialicons:2.2.0-9'
+    compile 'de.jensd:fontawesomefx-octicons:4.3.0-9'
+    compile 'de.jensd:fontawesomefx-weathericons:2.0.10-9'
 }
 
 test {
