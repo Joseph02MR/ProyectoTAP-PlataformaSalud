@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.estudiante.Alert_Manager">
+   <children>
+      <ImageView fx:id="logo" fitHeight="72.0" fitWidth="72.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logo2" fitHeight="72.0" fitWidth="72.0" layoutX="480.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <HBox alignment="TOP_CENTER" layoutX="130.0" layoutY="14.0" prefHeight="36.0" prefWidth="340.0" spacing="10">
+         <children>
+             <MaterialDesignIconView fill="black" glyphName="EMAIL" glyphSize="32" />
+            <Text fill="#644cb2" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;-fx-background-color: crimson" text="NOTIFICACIONES" textAlignment="CENTER" underline="true" wrappingWidth="170.13671875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+             <MaterialDesignIconView fill="black" glyphName="EMAIL" glyphSize="32" />
+         </children>
+      </HBox>
+       <VBox alignment="CENTER" spacing="15" />
+        <ListView  fx:id="notifications" layoutX="48.0" layoutY="105.0" prefHeight="232.0" prefWidth="504.0" />
+        <JFXButton fx:id="btnreturn" buttonType="RAISED" layoutX="257.0" layoutY="350.0" prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #d49426;-fx-font-weight: bold" text="RETURN" />
+
+
+
+   </children>
+</AnchorPane>

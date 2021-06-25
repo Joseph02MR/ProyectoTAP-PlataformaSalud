@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.estudiante.formularioController">
+   <children>
+      <ScrollPane prefHeight="900.0" prefWidth="585.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="920.0" prefWidth="570.0">
+               <children>
+                  <VBox prefHeight="900.0" prefWidth="574.0">
+                     <children>
+                        <Label text="Tener uno o más de los siguientes síntomas justifica la ausencia o retiro inmediato de la institución.">
+                           <font>
+                              <Font name="System Bold" size="11.5" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>
+                        <HBox prefHeight="75.0" prefWidth="568.0">
+                           <children>
+                              <JFXTextArea editable="false" prefHeight="0.0" prefWidth="328.0" scrollTop="500.0" text="¿Siente fiebre, escalofríos como los de una gripe, &#10;o una fiebre con una temperatura tomada por la boca de 38,1°C (100,6°F) o más?" wrapText="true">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb1" unCheckedColor="#5e5e5e">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>
+                        <HBox prefHeight="72.0" prefWidth="561.0">
+                           <children>
+                              <JFXTextArea editable="false" prefHeight="77.0" prefWidth="328.0" text="¿Ha tenido una pérdida repentina del olfato sin congestión&#10;nasal (nariz tapada), con o sin pérdida del gusto?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb2">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="18.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>
+                        <HBox prefHeight="65.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="¿Ha desarrollado una tos o su tos crónica ha empeorado&#10;recientemente?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb3">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="¿Tiene problemas al respirar o le falta el aliento?&#10;">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb4">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="233.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="236.0" prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="&#10;¿Tiene dolor de garganta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb5">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="20.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="297.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="300.0" prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="&#10;¿Tiene secreción o congestión nasal de causa desconocida?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb6">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="20.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="357.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <Label text="Tener dos o más de los siguientes síntomas justifica la ausencia o retiro inmediato de la Institución.">
+                           <font>
+                              <Font name="System Bold" size="11.5" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator layoutX="10.0" layoutY="430.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="360.0" prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="&#10;Dolor de estómago">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb7">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="417.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="433.0" prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="&#10;Náuseas o vómitos">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb8">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="494.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="497.0" prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="&#10;Diarrea">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb9">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="554.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="557.0" prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="&#10;Fatiga inusualmente intensa sin razón obvia">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb10">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="614.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="651.0" prefHeight="62.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="&#10;Pérdida significativa de apetito">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb11">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="712.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="665.0" prefHeight="85.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="Dolores musculares generalizados inusuales o sin razón obvia&#10;(no relacionado con el esfuerzo físico)">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb12">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="717.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox layoutX="10.0" layoutY="669.0" prefHeight="60.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="Dolor de cabeza inhabitual">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <JFXCheckBox fx:id="cb13">
+                                 <HBox.margin>
+                                    <Insets left="100.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="717.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <Label prefHeight="17.0" prefWidth="300.0" text="Otros síntomas">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator layoutX="10.0" layoutY="696.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>
+                        <HBox prefHeight="0.0" prefWidth="556.0">
+                           <children>
+                              <JFXTextArea editable="false" prefWidth="328.0" text="Describa si tiene otros síntomas:">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXTextArea>
+                              <TextField fx:id="tfSint" prefWidth="200.0" promptText="Inserte sintomas">
+                                 <HBox.margin>
+                                    <Insets left="17.0" top="6.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="10.0" layoutY="681.0" prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant>
+                                       <color>
+                                          <Color red="0.364705890417099" green="0.501960813999176" blue="0.9490196108818054" />
+                                       </color>
+                                    </Light.Distant>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox prefHeight="39.0" prefWidth="353.0">
+                           <children>
+                              <JFXButton fx:id="btnEnvi" buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: #4db24d" text="Enviar">
+                                 <HBox.margin>
+                                    <Insets left="200.0" top="20.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="black" glyphName="SAVE" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnCanc" buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: #e44343;" text="Cancelar">
+                                 <HBox.margin>
+                                    <Insets left="80.0" top="20.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="black" glyphName="REMOVE" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

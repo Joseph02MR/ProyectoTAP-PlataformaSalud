@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.emojione.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.estudiante.RecetaController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#19558d" height="400.0" opacity="0.81" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Text layoutX="163.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTA DE RECETAS" textAlignment="CENTER" wrappingWidth="274.13671875">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#728190" height="56.0" layoutX="163.0" layoutY="37.0" opacity="0.16" stroke="BLACK" strokeType="INSIDE" width="274.0" />
+      <ListView fx:id="consults" layoutX="163.0" layoutY="113.0" prefHeight="260.0" prefWidth="274.0" />
+       <JFXButton fx:id="btnreturn" buttonType="RAISED" layoutX="24.0" layoutY="347.0" prefHeight="26.0" prefWidth="112.0" style="-fx-background-color: #d49426;-fx-font-weight: bold" text="RETURN" />
+       <EmojiOneView glyphName="BACK" glyphSize="32" layoutX="64.0" layoutY="333.0" />
+      <ImageView fx:id="Logo" fitHeight="134.0" fitWidth="148.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Logo2" fitHeight="134.0" fitWidth="148.0" layoutX="452.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
