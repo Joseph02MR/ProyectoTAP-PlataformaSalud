@@ -1,0 +1,16 @@
+.gradient-background{
+	-fx-background-color: linear-gradient(from 25% 25% to 100% 100% ,#268bd4,#d49426);
+	
+}
+.line-color{
+	-fx-background-color:#FFFFFF;
+}
+
+.container{
+	-fx-background-color:#183d78;
+	-fx-background-radius:10;
+}
+
+.shadow{
+	-fx-effect:dropShadow(three-pass-box, rgba(0,0,0,0.2), 10.0, 0.0, 0.0, 10.0);
+}

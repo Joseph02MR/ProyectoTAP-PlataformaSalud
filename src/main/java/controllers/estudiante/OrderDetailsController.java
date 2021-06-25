@@ -1,4 +1,4 @@
-package controllers;
+package controllers.estudiante;
 
 import Models.OrdenPrueba;
 import com.jfoenix.controls.JFXButton;

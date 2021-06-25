@@ -1,4 +1,4 @@
-package controllers;
+package controllers.estudiante;
 
 import Models.OrdenPrueba;
 import com.jfoenix.controls.JFXButton;
@@ -17,7 +17,6 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,6 +37,7 @@ public class TestOrdersController implements Initializable {
         initData();
         initMenus();
     }
+
     public void setStage(Stage stage){
         this.stage = stage;
     }
@@ -96,7 +96,7 @@ public class TestOrdersController implements Initializable {
     private void initOrderDetails(OrdenPrueba order) throws IOException {
         Stage orderDStage = new Stage();
         orderDStage.setTitle("Detalles de la Orden");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/testDetails_view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/Estudiante/testDetails_view.fxml"));
         OrderDetailsController orderDet = new OrderDetailsController();
         loader.setController(orderDet);
         orderDet.setPrueba(order);

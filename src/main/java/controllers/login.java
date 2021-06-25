@@ -78,7 +78,7 @@ public class login implements Initializable {
     private void initUser() throws IOException {
             Stage login = new Stage();
             login.setTitle("Creating User");
-            Parent root = FXMLLoader.load(getClass().getResource("/Accesos/register_form.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Accesos/General/register_form.fxml"));
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/css/DarkTheme2.css");
             //scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());

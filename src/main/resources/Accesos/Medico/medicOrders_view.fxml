@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="gradient-background" stylesheets="/CSS/DashboardStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+    <BorderPane AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.topAnchor="5">
+        <padding>
+            <Insets topRightBottomLeft="10" />
+        </padding>
+        <left>
+            <VBox prefWidth="300" spacing="20">
+                <HBox alignment="CENTER">
+                    <Label alignment="CENTER" text="Información del usuario" style="-fx-font-size:16; -fx-font-weight:bold"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Nombre: " />
+                    <Text fx:id="tName" />
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Tipo de Prueba: " />
+                    <ComboBox fx:id="cbTestType" prefWidth="150.0" />
+                </HBox>
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <Label text="Fecha: " />
+                    <DatePicker fx:id="dpDate" prefWidth="150"/>
+                </HBox>
+            </VBox>
+        </left>
+        <right>
+            <VBox prefWidth="300" spacing="20">
+                <HBox alignment="CENTER">
+                    <Label text="Lista de Sospechosos" style="-fx-font-size:16; -fx-font-weight:bold"/>
+                </HBox>
+                <ListView fx:id="lvSuspects" />
+            </VBox>
+        </right>
+        <bottom>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets left="40" />
+                </padding>
+                <JFXButton fx:id="btnExit" buttonType="FLAT" style="-fx-graphic-text-gap:10;-fx-background-color: #d49426" text="Cancelar">
+                    <graphic>
+                        <MaterialDesignIconView glyphName="EXIT_TO_APP" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnSave" buttonType="FLAT" style="-fx-graphic-text-gap:10;-fx-background-color: #268bd4" text="Guardar">
+                    <graphic>
+                        <MaterialDesignIconView glyphName="CONTENT_SAVE" />
+                    </graphic>
+                </JFXButton>
+            </HBox>
+        </bottom>
+    </BorderPane>
+
+</AnchorPane>

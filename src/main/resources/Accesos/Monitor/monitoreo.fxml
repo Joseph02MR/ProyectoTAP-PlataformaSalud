@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="481.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.monitor.MonitoreoController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3975ae9e" height="484.0" stroke="BLACK" strokeType="INSIDE" width="724.0" />
+      <JFXListView fx:id="lv" layoutX="73.0" layoutY="54.0" prefHeight="400.0" prefWidth="232.0" />
+      <Separator layoutX="356.0" layoutY="54.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.3333333432674408" green="0.5777778029441833" blue="1.0" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Separator>
+      <JFXButton fx:id="btnEstaUsua" buttonType="RAISED" layoutX="426.0" layoutY="217.0" prefHeight="50.0" prefWidth="230.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4;-fx-graphic-text-gap:10" text="Estatus de Usuario" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="#ffffff" glyphName="ADDRESS_CARD_ALT" glyphSize="20" />
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnHistAler" buttonType="RAISED" layoutX="426.0" layoutY="82.0" prefHeight="50.0" prefWidth="230.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4;-fx-graphic-text-gap:10" text="Historial de alertas" textFill="WHITE" wrapText="true">
+         <graphic>
+            <FontAwesomeIconView fill="#ffffff" glyphName="FILE_TEXT_ALT" glyphSize="20" />
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnGeneAler" buttonType="RAISED" layoutX="426.0" layoutY="357.0" prefHeight="50.0" prefWidth="230.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4;-fx-graphic-text-gap:10" text="Generar alerta" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="#ffffff" glyphName="EXCLAMATION_CIRCLE" glyphSize="20" />
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

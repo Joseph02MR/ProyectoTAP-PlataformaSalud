@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.icons525.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.estudiante.SolicitudCita">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#164d80" height="90.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#394e61" height="314.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Text fill="#b9adad" layoutX="106.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GENERAR CITA" textAlignment="CENTER" wrappingWidth="388.13671875">
+         <font>
+            <Font name="Berlin Sans FB" size="36.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnreturn" buttonType="RAISED" layoutX="27.0" layoutY="34.0" prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #d49426;-fx-font-weight: bold" text="RETURN" />
+      <Label layoutX="13.0" layoutY="118.0" prefHeight="21.0" prefWidth="78.0" text="NOMBRE:" textFill="#dad9d9" />
+      <Label layoutX="13.0" layoutY="163.0" text="APELLIDOS:" textFill="#f5f5f5" />
+      <DatePicker fx:id="dpfecha" layoutX="368.0" layoutY="109.0" prefHeight="40.0" prefWidth="218.0" promptText="FECHA DE LA CITA" />
+      <Label layoutX="13.0" layoutY="211.0" text="HORARIO:" textFill="#fffdfd" />
+      <TextField fx:id="tfhora" layoutX="78.0" layoutY="207.0" prefHeight="25.0" prefWidth="195.0" />
+      <Text fill="WHITE" layoutX="13.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SÍNTOMAS:" />
+      <TextArea fx:id="tasintomas" layoutX="80.0" layoutY="251.0" prefHeight="90.0" prefWidth="195.0" />
+      <JFXButton fx:id="btnPruebas" buttonType="RAISED" layoutX="135.0" layoutY="352.0" prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #2280ca;-fx-font-weight: bold" text="Evidencias" />
+      <Icons525View fill="#fcffec" glyphName="CALENDAR" glyphSize="28" layoutX="326.0" layoutY="141.0" wrappingWidth="18.0">
+      </Icons525View>
+      <Text fx:id="Nombre" fill="#eeeeee" layoutX="69.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="Apellido" fill="#fffbfb" layoutX="80.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </children>
+</AnchorPane>

@@ -7,8 +7,8 @@ public class OrdenPrueba {
     private LocalDate Orderdate;
     private String testType;
 
-    public static String[] testTypes = {"PCR (Reaccion en Cadena de la Polimerasa",
-            "Prueba Rapida de Antígeno", "Prueba Rapida de Sangre", "Prueba no valida"};
+    public static String[] testTypes = {"PCR (Reaccion en Cadena de la Polimerasa)",
+            "Prueba Rapida de Antigeno", "Prueba Rapida de Sangre", "Prueba no valida"};
     public static String[] results = {"POSITIVO", "NEGATIVO","SIN RESULTADO"};
 
     public OrdenPrueba (){
