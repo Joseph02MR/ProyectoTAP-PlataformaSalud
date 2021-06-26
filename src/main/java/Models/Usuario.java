@@ -1,7 +1,7 @@
 package Models;
 
 public class Usuario {
-    private String Username;
+    private String cveUsuario;
     private String Password;
     private String Email;
     private String Nombre;
@@ -12,6 +12,8 @@ public class Usuario {
 
     public Usuario(){
     }
+
+
 
 
 }

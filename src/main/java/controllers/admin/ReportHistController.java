@@ -1,5 +1,8 @@
 package controllers.admin;
 
+import Database.MySQLConnection;
+import Database.Views.UserReportsDAO;
+import Reports.IOMethods;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -17,6 +21,8 @@ public class ReportHistController implements Initializable {
     JFXButton btnExit;
     TableView<Object> tvAlerts;
     //ObservableList<Alerta> alertas;
+
+    UserReportsDAO userReportsDAO = new UserReportsDAO(MySQLConnection.getConnection());
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,5 +45,10 @@ public class ReportHistController implements Initializable {
 
     private void initData(){
         //alertas = FXCollections.observableArrayList();
+    }
+
+    private void readFileFromDB(int id) throws IOException {
+        String filepath = userReportsDAO.getFile(id);
+        IOMethods.openFile(filepath);
     }
 }

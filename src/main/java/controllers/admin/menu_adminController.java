@@ -1,5 +1,6 @@
 package controllers.admin;
 
+import controllers.general.GenRepoController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -39,25 +40,26 @@ public class menu_adminController implements Initializable {
 
     //TODO add databases names
     private void initData(){
-        cbDBList.getItems().addAll("/* insert databases here*/");
+        //cbDBList.getItems().addAll("/* insert databases here*/");
     }
 
     EventHandler<ActionEvent> btnHandler = event -> {
         try{
             if (event.getSource() == btnEstu) {
                 initDBList();
-                //} else if (event.getSource())
             } else if(event.getSource() == btnHistRepo){
                 initHistRepo();
+            } else if(event.getSource() == btnGeneRepo){
+                initGenReps();
             }
         } catch (IOException e){
-
-            }
+            e.printStackTrace();
+        }
     };
 
     private void initDBList() throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Encuestas respondidas");
+        stage.setTitle("Catalogo de Tablas");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/admin/dbList_view.fxml"));
         DBListController controller = new DBListController();
         loader.setController(controller);
@@ -72,11 +74,23 @@ public class menu_adminController implements Initializable {
 
     private void initHistRepo() throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Encuestas respondidas");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/admin/dbList_view.fxml"));
+        stage.setTitle("Historial de Reportes");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/admin/repo_hist_view.fxml"));
         ReportHistController controller = new ReportHistController();
         loader.setController(controller);
         controller.setStage(stage);
+        Parent root = loader.load();
+        stage.getIcons().add(new Image("/Images/Logo/btq.png"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+    private void initGenReps() throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Generacion de Reportes");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/General/gen_repo_view.fxml"));
+        //controller.setStage(stage);
         Parent root = loader.load();
         stage.getIcons().add(new Image("/Images/Logo/btq.png"));
         Scene scene = new Scene(root);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.general.GenRepoController"
+            prefHeight="400.0" prefWidth="600.0">
+
+
+    <VBox AnchorPane.rightAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.topAnchor="5" AnchorPane.bottomAnchor="5"
+          alignment="CENTER" spacing="10">
+        <HBox spacing="10" alignment="CENTER">
+            <FontAwesomeIconView glyphName="HISTORY" glyphSize="20"/>
+            <Label text="Generacion de Reportes" alignment="CENTER" style="-fx-font-size:20; -fx-font-weight:bold"/>
+            <FontAwesomeIconView glyphName="HISTORY" glyphSize="20"/>
+        </HBox>
+
+        <JFXButton fx:id="btnPrintRep" text="Imprimir Reporte" buttonType="FLAT"
+                   style="-fx-graphic-text-gap:10;-fx-background-color: #268bd4">
+            <graphic>
+                <FontAwesomeIconView glyphName="PRINT" />
+            </graphic>
+        </JFXButton>
+    </VBox>
+
+</AnchorPane>

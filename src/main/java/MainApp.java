@@ -1,3 +1,6 @@
+import Models.Views.Receta.RecetaReporte;
+import Reports.RecetaPDF;
+import Reports.ReportsPDF;
 import controllers.admin.menu_adminController;
 import controllers.medic.MainViewMedController;
 import controllers.monitor.MonitoreoController;
@@ -9,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class MainApp extends Application {
 
@@ -19,8 +23,18 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         //initLogin();
-        initA();
-        initMonitor();
+        //initMed();
+        //initMonitor();
+        initAdmin();
+        RecetaReporte rep = new RecetaReporte(
+                1203, "Pedro PAramos", "EL mameitor", "1234123", LocalDate.now()
+        );
+        RecetaPDF receta = new RecetaPDF();
+        try{
+            receta.ReceiptGen(rep);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -36,7 +50,7 @@ public class MainApp extends Application {
         login.show();
     }
 
-    private void initA() throws IOException {
+    private void initMed() throws IOException {
         Stage login = new Stage();
         login.setTitle("PANEL MEDICO");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/Medico/medicMain_view.fxml"));
