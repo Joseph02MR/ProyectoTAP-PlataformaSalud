@@ -40,7 +40,7 @@ public class RecetaPDF {
 
     private void createReceipt(String dest, RecetaReporte receta) throws IOException {
 
-        //Initialize PDF writer
+        //Initialize PDF writear
         PdfWriter writer = new PdfWriter(dest);
         //Initialize PDF document
         PdfDocument pdf = new PdfDocument(writer);
