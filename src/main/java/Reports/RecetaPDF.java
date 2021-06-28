@@ -26,12 +26,12 @@ public class RecetaPDF {
     String DEST;
 
 
-    public void ReceiptGen(RecetaReporte receta) throws IOException {
+    public String ReceiptGen(RecetaReporte receta) throws IOException {
         updatePath(receta);
         File file = new File(DEST);
         file.getParentFile().mkdirs();
         createReceipt(DEST, receta);
-        //return DEST;
+        return DEST;
     }
 
     private void updatePath(RecetaReporte receta){
@@ -53,25 +53,23 @@ public class RecetaPDF {
         PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
 
         Table table = new Table(UnitValue.createPercentArray(new float[]{5,5})).useAllAvailableWidth();
-        table.setStrokeWidth(0);
 
         process(table, null, bold, true);
         for(MedicamentoReceta med : recetaDAO.getMedsForPrescription(receta.getNoReceta())){
-                process(table, med, font, false);
-            }
+            process(table, med, font, false);
+        }
+
         document.add(new Paragraph("INSTITUTO TECNOLOGICO DE CELAYA").setFont(bold).setTextAlignment(TextAlignment.CENTER));
         document.add(new Paragraph("DEPARTAMENTO DE SERVICIOS ESCOLARES - SERVICIOS MEDICOS").setFont(bold).setTextAlignment(TextAlignment.CENTER));
         document.add(new Paragraph("RECETA MEDICA").setFont(bold).setTextAlignment(TextAlignment.CENTER));
 
         Table table2 = new Table(UnitValue.createPercentArray(new float[]{5,5})).useAllAvailableWidth();
-        table2.setStrokeWidth(0);
         table2.addHeaderCell(new Cell().add(new Paragraph("Medico: " +receta.getNombreMed()).setFont(font)));
         table2.addHeaderCell(new Cell().add(new Paragraph("Cedula Profesional: " + receta.getCedProf()).setFont(font)));
         document.add(table2);
         document.add(new Paragraph("FECHA: "+receta.getFecha()).setFont(bold).setTextAlignment(TextAlignment.LEFT));
 
         document.add(table);
-        //TODO opcional: agregar persona que crea el reporte
         document.add(new Paragraph("equipo Le Jose").setFont(font));
 
         //Close document

@@ -22,19 +22,17 @@ public class CarreraDAO {
     public ObservableList<Carrera> getAll()
     {
         try {
-            String query = "";
+            String query = "select * from carrera";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
-            while (rs.next())
-            {
+            while (rs.next()) {
                 listCarrera.add(new Carrera(
-                      //  rs.getString("")
+                        rs.getInt("cveCarrera"),
+                        rs.getString("nombre")
                 ));
             }
-        } catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             ex.printStackTrace();
-
         }
         return listCarrera;
     }

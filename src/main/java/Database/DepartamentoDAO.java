@@ -22,19 +22,17 @@ public class DepartamentoDAO {
     public ObservableList<Departamento> getAll()
     {
         try {
-            String query = "";
+            String query = "select * from departamento";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
-            while (rs.next())
-            {
+            while (rs.next()) {
                 listDepartamento.add(new Departamento(
-                        //rs.getString("genero")
+                        rs.getInt("cveDepartamento"),
+                        rs.getString("nombre")
                 ));
             }
-        } catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             ex.printStackTrace();
-
         }
         return listDepartamento;
     }

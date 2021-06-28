@@ -18,6 +18,10 @@
             <Label text="Detalles de la prueba"/>
         </HBox>
         <HBox>
+            <Label text="No. de Orden: "/>
+            <Label fx:id="LabelnumOrder"/>
+        </HBox>
+        <HBox>
             <Label text="Tipo de Prueba: "/>
             <Label fx:id="LabelTestType"/>
         </HBox>

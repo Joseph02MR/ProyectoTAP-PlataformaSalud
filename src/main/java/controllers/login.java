@@ -1,6 +1,11 @@
 package controllers;
 
+import Database.MySQLConnection;
+import Database.UsuarioDAO;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import controllers.medic.MainViewMedController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -20,10 +25,16 @@ public class login implements Initializable {
 
     @FXML
     ImageView logo;
-    
     @FXML
     JFXButton btnLogin,btnRegister;
-        
+    @FXML
+    JFXTextField tfUser;
+    @FXML
+    JFXPasswordField tfPassword;
+    int[] TuplaAux;
+
+    //DAOS
+    UsuarioDAO usuarioDAO = new UsuarioDAO(MySQLConnection.getConnection());
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -33,46 +44,58 @@ public class login implements Initializable {
          btnRegister.setOnAction(eventHandler);
     }
     EventHandler<ActionEvent> eventHandler=new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(event.getSource()==btnLogin)
-                {
-
-                }else{
-                    try {
-                        initUser();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
+        @Override
+        public void handle(ActionEvent event) {
+            try{
+                if (event.getSource() == btnLogin) {
+                    getData();
+                } else {
+                    initUser();
                 }
+            } catch (IOException e){
+                e.printStackTrace();
             }
+        }
     };
 
-     /*
-
-        private User searchUser()
-        {
-            User user=null;//CONSULTA PARA BUSCAR Y COMPROBAR USUARIO Y CONTRASEÑA
-
-            return user;
-
-        }
-        private void openUserForm()
-        {
-            if(searchUser().getPrivilegies()==1)
-            {
-                //SE ABRE EL FORMULARIO DEL ADMIN Y ASI PARA C/U USUARIO
+    public void initGUI() throws IOException {
+        switch (TuplaAux[1]){
+            case 2: initAdminView(); break;
+            case 1: initMonitorView(); break;
+            case 0: {
+                int aux = usuarioDAO.method(TuplaAux[0]);
+                switch (aux){
+                    case 2: initMedView(); break;
+                    case 1: initDirView(); break;
+                    case 0: initNormalView(); break;
+                }
             }
-
         }
-    */
-
-    public void initGUI(){
 
     }
 
-    public void initData(){
+    public void getData() throws IOException {
+        String user = tfUser.getText();
+        String pw = tfPassword.getText();
+        TuplaAux = usuarioDAO.search(user, pw);
+        if(TuplaAux[0] == -1){
+            //Error
+            System.out.println("login error");
+            return;
+        }
+        initGUI();
+    }
+
+    private void initNormalView() throws IOException {
+        System.out.println("entered Normal view");
+        Stage login = new Stage();
+        login.setTitle("Creating User");
+        Parent root = FXMLLoader.load(getClass().getResource("/Accesos/Estudiante/menu_principal.fxml"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.setResizable(false);
+        login.show();
+
     }
 
     private void initUser() throws IOException {
@@ -80,10 +103,62 @@ public class login implements Initializable {
             login.setTitle("Creating User");
             Parent root = FXMLLoader.load(getClass().getResource("/Accesos/General/register_form.fxml"));
             Scene scene = new Scene(root);
-            scene.getStylesheets().add("/css/DarkTheme2.css");
-            //scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
             login.setScene(scene);
             login.setResizable(false);
             login.show();
     }
+
+    private void initDirView() throws IOException {
+        System.out.println("entered Dir view");
+        Stage login = new Stage();
+        login.setTitle("Creating User");
+        Parent root = FXMLLoader.load(getClass().getResource("/Accesos/General/DirectionDashboard.fxml"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.setResizable(false);
+        login.show();
+
+    }
+
+    private void initMedView() throws IOException {
+        System.out.println("entered med view");
+        Stage login = new Stage();
+        login.setTitle("PANEL MEDICO");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/Medico/medicMain_view.fxml"));
+        MainViewMedController medicCon = new MainViewMedController();
+        loader.setController(medicCon);
+        Parent root = loader.load();
+        login.getIcons().add(new Image("/Images/Logo/btq.png"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.setResizable(false);
+        login.show();
+    }
+
+    private void initMonitorView() throws IOException {
+        System.out.println("entered monitor view");
+        Stage login = new Stage();
+        login.setTitle("PANEL MONITOR");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/Monitor/monitoreo.fxml"));
+        Parent root = loader.load();
+        login.getIcons().add(new Image("/Images/Logo/btq.png"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.setResizable(false);
+        login.show();
+    }
+
+    private void initAdminView() throws IOException {
+        System.out.println("entered admin view");
+        Stage login = new Stage();
+        login.setTitle("PANEL ADMIN");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/admin/menu_admin.fxml"));
+        Parent root = loader.load();
+        login.getIcons().add(new Image("/Images/Logo/btq.png"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.setResizable(false);
+        login.show();
+    }
+
 }

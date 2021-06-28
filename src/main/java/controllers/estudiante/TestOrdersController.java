@@ -1,5 +1,7 @@
 package controllers.estudiante;
 
+import Database.MySQLConnection;
+import Database.OrdenPruebaDAO;
 import Models.OrdenPrueba;
 import com.jfoenix.controls.JFXButton;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
@@ -26,6 +28,8 @@ import java.util.ResourceBundle;
 public class TestOrdersController implements Initializable {
     ObservableList<OrdenPrueba> orders;
     ContextMenu cmOrders = new ContextMenu();
+    OrdenPruebaDAO ordenPruebaDAO = new OrdenPruebaDAO(MySQLConnection.getConnection());
+    int cveUser;
     Stage stage;
     @FXML
     JFXButton btnExit;
@@ -47,6 +51,10 @@ public class TestOrdersController implements Initializable {
             stage.close();
         }
     };
+
+    public void setUser(int cveUser){
+        this.cveUser = cveUser;
+    }
 
     private void initMenus(){
         MenuItem miView = new MenuItem("Ver detalles");
@@ -79,12 +87,7 @@ public class TestOrdersController implements Initializable {
     }
 
     private void initData(){
-        orders = FXCollections.observableArrayList();
-        orders.add(new OrdenPrueba());
-        orders.add(new OrdenPrueba());
-        orders.add(new OrdenPrueba());
-        orders.add(new OrdenPrueba());
-        orders.add(new OrdenPrueba());
+        orders = ordenPruebaDAO.getOrdersPerUser(cveUser);
 
        for(var x: orders){
            x.toString();

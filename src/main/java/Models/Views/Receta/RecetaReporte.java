@@ -14,8 +14,8 @@ public class RecetaReporte {
 
     public RecetaReporte(int noReceta, String nombreMed, String nombreUser, String cedProf, LocalDate fecha) {
         this.noReceta = noReceta;
-        NombreMed = nombreMed;
-        NombreUser = nombreUser;
+        this.NombreMed = nombreMed;
+        this.NombreUser = nombreUser;
         this.cedProf = cedProf;
         this.fecha = fecha;
     }

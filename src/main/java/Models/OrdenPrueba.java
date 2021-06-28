@@ -3,6 +3,7 @@ package Models;
 import java.time.LocalDate;
 
 public class OrdenPrueba {
+    private int cveOrden;
     private String result;
     private LocalDate Orderdate;
     private String testType;
@@ -17,10 +18,19 @@ public class OrdenPrueba {
         this.result = results[2];
     }
 
-    public OrdenPrueba(String result, LocalDate orderdate, String testType) {
+    public OrdenPrueba(int cveOrden, String result, LocalDate orderdate, String testType) {
+        this.cveOrden = cveOrden;
         this.result = result;
         Orderdate = orderdate;
         this.testType = testType;
+    }
+
+    public int getCveOrden() {
+        return cveOrden;
+    }
+
+    public void setCveOrden(int cveOrden) {
+        this.cveOrden = cveOrden;
     }
 
     @Override

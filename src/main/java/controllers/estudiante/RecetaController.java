@@ -1,10 +1,16 @@
 package controllers.estudiante;
 
+import Database.MySQLConnection;
+import Database.RecetaDAO;
 import Models.Receta;
-import de.jensd.fx.glyphs.emojione.EmojiOne;
-import de.jensd.fx.glyphs.emojione.EmojiOneView;
-import javafx.collections.FXCollections;
+import Models.Views.Receta.RecetaReporte;
+import Reports.IOMethods;
+import Reports.RecetaPDF;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,6 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,13 +30,15 @@ public class RecetaController implements Initializable {
     @FXML
     ImageView Logo,Logo2;
     @FXML
-    ListView consults;
+    ListView<Receta> lvrecetas;
     @FXML
     Button btnreturn;
+    int cveUser;
 
     ContextMenu contextMenu = new ContextMenu();
+    RecetaDAO recetaDAO = new RecetaDAO(MySQLConnection.getConnection());
 
-    ObservableList<Receta> C;
+    ObservableList<Receta> recetas;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -38,40 +47,50 @@ public class RecetaController implements Initializable {
         Logo.setImage(R);
         Logo2.setImage(P);
 
-        add();
-        initinfo();
+        initData();
         initmenu();
     }
-    private void initinfo()
-    {
-        consults.setItems(C);
+    public void setCveUser(int cveUser){
+        this.cveUser = cveUser;
     }
-    private void add(){
-        C= FXCollections.observableArrayList();
 
-        C.add(new Receta());
-        C.add(new Receta());
-        C.add(new Receta());
-        C.add(new Receta());
-        C.add(new Receta());
+    private void initData(){
+        recetas = recetaDAO.getListPerUser(cveUser);
 
+        for(var x : recetas){
+            x.toString();
+        }
+        if(recetas.size() >= 0){
+            lvrecetas.setItems(recetas);
+        }
     }
 
     private void initmenu(){
-        MenuItem Agendar =new MenuItem("Agendar");
-        MenuItem Responder =new MenuItem("Responder");
+        MenuItem imprimir =new MenuItem("Imprimir");
 
-        EmojiOneView icon = new EmojiOneView(EmojiOne.FILE_FOLDER);
+        FontAwesomeIconView icon = new FontAwesomeIconView(FontAwesomeIcon.PRINT);
         icon.setFill(Color.BLACK);
         icon.setGlyphSize(19);
-        Agendar.setGraphic(icon);
+        imprimir.setGraphic(icon);
 
-        EmojiOneView icon2 = new EmojiOneView(EmojiOne.INCOMING_ENVELOPE);
-        icon2.setFill(Color.BLACK);
-        icon2.setGlyphSize(19);
-        Responder.setGraphic(icon2);
+        imprimir.setOnAction(printhandler);
 
-        contextMenu.getItems().addAll(Agendar,Responder);
-        consults.setContextMenu(contextMenu);
+        contextMenu.getItems().add(imprimir);
+        lvrecetas.setContextMenu(contextMenu);
+    }
+
+    EventHandler<ActionEvent> printhandler = event ->{
+        try {
+            printReceipt(lvrecetas.getSelectionModel().getSelectedItem().getNoReceta());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    };
+
+    private void printReceipt(int noReceta) throws IOException {
+        RecetaReporte receta = recetaDAO.getDataForPrint(noReceta);
+        RecetaPDF recetaPDF = new RecetaPDF();
+        String aux= recetaPDF.ReceiptGen(receta);
+        IOMethods.openFile(aux);
     }
 }

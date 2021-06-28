@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.menu_adminController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.estudiante.menu_principalController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="401.0" opacity="0.19" stroke="BLACK" strokeType="INSIDE" width="601.0" />
       <JFXButton fx:id="btnEncu" buttonType="RAISED" layoutX="146.0" layoutY="125.0" prefHeight="41.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Encuesta">

@@ -1,20 +1,39 @@
 package Models;
 
-import Models.Views.Receta.MedicamentoReceta;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Receta {
     private int noReceta;
     private LocalDate date;
-    private Medico medico;
-    private Estudiante estudiante; //String
-    private ArrayList<MedicamentoReceta> medicamentos;
-
 
     public Receta() {
     }
 
+    public Receta(int noReceta, LocalDate date) {
+        this.noReceta = noReceta;
+        this.date = date;
+    }
+
+
+    public String toString(){
+        return "No.Receta: " +noReceta + " - Fecha de Generacion: "+date;
+    }
+
+    public int getNoReceta() {
+        return noReceta;
+    }
+
+    public void setNoReceta(int noReceta) {
+        this.noReceta = noReceta;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 }
 

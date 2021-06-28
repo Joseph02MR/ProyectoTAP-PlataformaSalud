@@ -1,6 +1,6 @@
 package controllers.admin;
 
-import controllers.general.GenRepoController;
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class menu_adminController implements Initializable {
     @FXML
-    Button btnEstu,btnPers,btnCarr,btnDepa,btnMedi,btnHabiCuen,btnCont,btnGeneRepo,btnHistRepo;
+    JFXButton btnEstu,btnPers,btnCarr,btnDepa,btnMedi,btnHabiCuen,btnCont,btnGeneRepo,btnHistRepo;
     @FXML
     ComboBox cbDBList;
 
