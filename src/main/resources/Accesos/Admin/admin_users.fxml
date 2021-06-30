@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.bootstrapfx.scene.layout.Panel?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="600.0" prefWidth="900.0"
+            fx:id="holderPane">
+
+    <top></top>
+    <left></left>
+    <right>
+        <Panel styleClass="panel-success" >
+            <heading>
+                <Label styleClass="h3">User Add/Edit</Label>
+            </heading>
+            <body>
+                <VBox spacing="5" alignment="CENTER" >
+                    <padding>
+                        <Insets topRightBottomLeft="10"/>
+                    </padding>
+                    <Label text="Email" textAlignment="LEFT" prefWidth="250"/>
+                    <TextField fx:id="tfUserEmail"  promptText="Email" prefWidth="250" />
+
+                    <Label text="Password" textAlignment="LEFT" prefWidth="250"/>
+                    <TextField fx:id="tfUserPassword"  promptText="Password" prefWidth="250"/>
+
+                    <Label text="Nombre" textAlignment="LEFT" prefWidth="250"/>
+                    <TextField fx:id="tfName"  promptText="Name" prefWidth="250"/>
+
+                    <Label text="Apellidos" textAlignment="LEFT" prefWidth="250"/>
+                    <TextField fx:id="tfLastName"  promptText="Apellidos" prefWidth="250"/>
+
+                    <Label text="Genero" textAlignment="LEFT" prefWidth="250"/>
+                    <ComboBox fx:id="cmbGenero" prefWidth="250"/>
+
+                    <DatePicker promptText="Fecha nacimiento" fx:id="dpNaci"/>
+
+                    <Label text="Privilegio" textAlignment="LEFT" prefWidth="250"/>
+                    <ComboBox fx:id="cmbPriv" prefWidth="250"/>
+
+                    <Label text="Estado de salud" textAlignment="LEFT" prefWidth="250"/>
+                    <ComboBox fx:id="cmbEdoSal" prefWidth="250"/>
+
+                    <Label text="Estado de la cuenta" textAlignment="LEFT" prefWidth="250"/>
+                    <CheckBox fx:id="chkEdoCuen"/>
+
+                    <HBox spacing="5" alignment="CENTER">
+                        <Button fx:id="btnSaveUser" text="Guardar" styleClass="btn,  btn-primary">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="SAVE"  fill="floralwhite"/>
+                            </graphic>
+
+                            <tooltip>
+                                <Tooltip styleClass="tooltip-success" text="Save the product"/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="btnCancel" text="Cancelar" styleClass="btn,  btn-danger">
+                            <graphic>
+                                <Icons525View glyphName="CANCEL_CIRCLE"  fill="floralwhite"/>
+                            </graphic>
+
+                            <tooltip>
+                                <Tooltip styleClass="tooltip-warning" text="Cancel edit"/>
+                            </tooltip>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </body>
+        </Panel>
+    </right>
+    <bottom></bottom>
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Label text="Usuarios List" styleClass="h3,b, text-primary">
+            </Label>
+            <TableView fx:id="tblUsers" />
+        </VBox>
+    </center>
+
+</BorderPane>

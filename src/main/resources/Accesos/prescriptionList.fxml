@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.PrescriptionList"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Label text="Prescription List" styleClass="h3,b, text-primary">
+                <graphic>
+                    <FontAwesomeIconView glyphName="MEDKIT" fill="#052b80"/>
+                </graphic>
+            </Label>
+            <ListView fx:id="lvPrescriptions" />
+        </VBox>
+    </center>
+
+    <bottom>
+
+        <HBox alignment="CENTER">
+        <Button fx:id="btnExit" text="Back" styleClass="btn,  btn-primary">
+            <graphic>
+                <Icons525View glyphName="ARROW_SIGN" fill="floralwhite"/>
+            </graphic>
+
+            <tooltip>
+                <Tooltip styleClass="tooltip-warning" text="Back to home"/>
+            </tooltip>
+        </Button>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

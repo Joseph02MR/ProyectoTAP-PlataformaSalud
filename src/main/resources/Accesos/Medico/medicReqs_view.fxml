@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="629.0" prefWidth="695.0" styleClass="gradient-background" stylesheets="/css/DashboardStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label layoutX="126.0" layoutY="69.0" text="Lista de Consultas" textFill="#2252a4">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="lvCons" layoutX="23.0" layoutY="119.0" prefHeight="471.0" prefWidth="357.0" />
+      <Label layoutX="486.0" layoutY="85.0" text="Síntomas" textFill="#2952b9">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtSint" editable="false" layoutX="412.0" layoutY="119.0" prefHeight="135.0" prefWidth="230.0" />
+      <Label layoutX="488.0" layoutY="265.0" text="Archivos" textFill="#2952b9">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="lvArch" layoutX="412.0" layoutY="287.0" prefHeight="180.0" prefWidth="230.0" />
+      <Accordion layoutX="289.0" layoutY="552.0" prefHeight="0.0" prefWidth="230.0" />
+    <TitledPane expanded="false" layoutX="412.0" layoutY="479.0" prefHeight="27.0" prefWidth="230.0" text="Responder">
+         <content>
+            <VBox alignment="CENTER" prefHeight="64.0" prefWidth="227.0">
+               <children>
+                  <JFXButton fx:id="btnGeneRece" buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Generar receta" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMarcSosp" buttonType="RAISED" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Marcar sospechoso" textFill="WHITE">
+
+                  </JFXButton>
+                  <JFXButton fx:id="btnAgen" prefHeight="21.0" prefWidth="230.0" text="Agendar" />
+               </children>
+            </VBox>
+         </content>
+    </TitledPane>
+   </children>
+</AnchorPane>

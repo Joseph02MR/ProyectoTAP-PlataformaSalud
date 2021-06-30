@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?><?import java.util.*?><?import javafx.scene.*?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXButton?><?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+    prefHeight="400.0" prefWidth="600.0" fx:controller="controllers.Estudiantes.TestOrdersController">
+
+    <VBox AnchorPane.topAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.bottomAnchor="5"
+    style="-fx-font-size:20" spacing="10">
+        <HBox alignment="CENTER" spacing="10">
+            <FontAwesomeIconView glyphName="MEDKIT" glyphSize="25"/>
+            <Label text="Orden de prueba: COVID-19" style="-fx-font-size:20"/>
+            <FontAwesomeIconView glyphName="MEDKIT" glyphSize="25"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            alignment
+            <Label text="Detalles de la prueba"/>
+        </HBox>
+        <HBox>
+            <Label text="Tipo de Prueba: "/>
+            <Label fx:id="LabelTestType"/>
+        </HBox>
+        <HBox>
+            <Label text="Fecha de Expedición: "/>
+            <Label fx:id="LabelOrderDate" />
+        </HBox>
+        <HBox>
+            <Label text="Resultado: "/>
+            <Label fx:id="LabelResult" />
+        </HBox>
+
+        <HBox alignment="CENTER">
+            <JFXButton fx:id="btnPrint" text="Imprimir" style="-fx-background-color: #268bd4">
+                <graphic>
+                    <FontAwesomeIconView glyphName="PRINT" />
+                </graphic>
+            </JFXButton>
+        </HBox>
+    </VBox>
+
+</AnchorPane>
