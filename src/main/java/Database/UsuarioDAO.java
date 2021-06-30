@@ -1,6 +1,7 @@
 package Database;
 
 import Models.Usuario;
+import Models.UsuarioLista;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -10,6 +11,7 @@ public class UsuarioDAO {
 
     Connection conn;
     ObservableList<Usuario> listUsuarios = FXCollections.observableArrayList();
+    ObservableList<UsuarioLista> listaUsuariosLista = FXCollections.observableArrayList();
 
     public UsuarioDAO(Connection conn)
     {
@@ -37,10 +39,8 @@ public class UsuarioDAO {
                         rs.getInt("id_edoCuenta")
                 ));
             }
-        } catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             ex.printStackTrace();
-
         }
         return listUsuarios;
     }
@@ -149,5 +149,42 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public String getName(int cveUsuario){
+        String name ="";
+        try {
+            String query = "select concat(nombre, ' ',apellidos) as nombre from usuario where cveUsuario = "+cveUsuario+";";
+            Statement st = conn.createStatement();
+            ResultSet rs= st.executeQuery(query);
+            while(rs.next()){
+                name = rs.getString("nombre");
+            }
+            return name;
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ObservableList<UsuarioLista> getAllSospechososPendientes()
+    {
+        try {
+            String query = "select * from vistaSospechosos where cveUsuario not in " +
+                    "(select cveUsuario from ordenprueba where estado = 'realizada' or " +
+                    "estado = 'pendiente' or estado = 'respondida' group by cveOrdenPrueba)";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next())
+            {
+                listaUsuariosLista.add(new UsuarioLista(
+                        rs.getInt("cveUsuario"),
+                        rs.getString("nombre")
+                ));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return listaUsuariosLista;
     }
 }

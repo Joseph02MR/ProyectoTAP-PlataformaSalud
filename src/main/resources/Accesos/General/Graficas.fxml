@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="960.0" styleClass="gradient-background" stylesheets="/CSS/DashboardStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.general.Graficas">
+   <top>
+      <HBox alignment="CENTER" prefHeight="69.0" prefWidth="720.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Gráficas" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <ImageView fitHeight="60.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <image>
+                  <Image url="/Images/Logo/grafica_1.png" />
+               </image>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <HBox prefHeight="343.0" prefWidth="731.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="399.0" prefWidth="450.0" spacing="20.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="450.0" spacing="20.0">
+                     <children>
+                        <Label text="Casos positivos" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/Images/Logo/positivo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="306.0" prefWidth="450.0">
+                     <children>
+                        <VBox prefHeight="301.0" prefWidth="233.0">
+                           <children>
+                              <PieChart fx:id="pieCarrera" prefHeight="306.0" prefWidth="211.0" title="Carrera" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="302.0" prefWidth="222.0">
+                           <children>
+                              <PieChart fx:id="pieDepto" title="Departamento" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="273.0" prefWidth="400.0">
+                     <children>
+                        <VBox prefHeight="249.0" prefWidth="434.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="450.0" spacing="20.0">
+                                 <children>
+                                    <Label text="Total de consultas atendidas" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="/Images/Logo/medico.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <PieChart fx:id="pieConsultas" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="320.0" prefWidth="551.0">
+               <children>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="320.0" prefWidth="603.0">
+                     <children>
+                        <HBox alignment="TOP_CENTER" prefHeight="37.0" prefWidth="396.0">
+                           <children>
+                              <Label text="Encuestas realizadas" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/Images/Logo/encuesta.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="287.0" prefWidth="423.0">
+                           <children>
+                              <VBox prefHeight="285.0" prefWidth="285.0">
+                                 <children>
+                                    <BarChart fx:id="barCarrera" title="Carrera">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="285.0" prefWidth="285.0">
+                                 <children>
+                                    <BarChart fx:id="barDepto" title="Departamento">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

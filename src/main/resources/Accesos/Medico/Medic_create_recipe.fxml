@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="782.0" styleClass="gradient-background" stylesheets="/CSS/DashboardStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label layoutX="15.0" layoutY="14.0" text="Medico: ">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="58.0" text="Cédula:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="104.0" text="Paciente:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+       <JFXButton fx:id="btnAddmed" buttonType="RAISED" layoutX="587.0" layoutY="312.0" prefHeight="37.0" prefWidth="163.0" style="-fx-graphic-text-gap:10;-fx-background-color: #268bd4" text="Agregar Medicamento">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="btnsave" buttonType="RAISED" layoutX="195.0" layoutY="349.0" prefHeight="37.0" prefWidth="163.0" style="-fx-graphic-text-gap:10;-fx-background-color: #ff8e00" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+      <TextField fx:id="tfmedico" layoutX="107.0" layoutY="15.0" prefHeight="31.0" prefWidth="291.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfcedula" layoutX="107.0" layoutY="59.0" prefHeight="25.0" prefWidth="163.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfpaciente" layoutX="107.0" layoutY="105.0" prefHeight="31.0" prefWidth="291.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <ListView fx:id="lvmeds" layoutX="33.0" layoutY="158.0" prefHeight="174.0" prefWidth="486.0" />
+      <Separator layoutX="552.0" layoutY="5.0" orientation="VERTICAL" prefHeight="390.0" prefWidth="0.0" />
+      <ImageView fx:id="mm" fitHeight="144.0" fitWidth="188.0" layoutX="574.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="cbmed" layoutX="587.0" layoutY="200.0" prefHeight="32.0" prefWidth="163.0" promptText="Medicamento" style="-fx-font-size: 16" />
+      <Label layoutX="560.0" layoutY="258.0" prefHeight="32.0" prefWidth="84.0" text="Dosis:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfdosis" layoutX="619.0" layoutY="262.0" />
+   </children>
+</AnchorPane>

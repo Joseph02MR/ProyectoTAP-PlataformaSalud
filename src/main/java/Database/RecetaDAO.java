@@ -6,10 +6,7 @@ import Models.Views.Receta.RecetaReporte;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.List;
 
 public class RecetaDAO {
@@ -42,6 +39,25 @@ public class RecetaDAO {
 
         }
         return listReceta;
+    }
+
+    public int insert(Date fechaReceta){
+        int aux = 0;
+        try{
+            String query = "insert into receta (fechaGen) values (?)";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setDate(1,fechaReceta);
+            ps.execute();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("select last_insert_id() as res;");
+            while (rs.next()){
+                aux = rs.getInt("res");
+            }
+            return  aux;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     public ObservableList<Receta> getListPerUser(int cveUser){

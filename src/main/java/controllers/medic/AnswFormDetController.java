@@ -1,12 +1,10 @@
 package controllers.medic;
 
+import Database.MySQLConnection;
+import Database.UsuarioDAO;
 import Models.Encuesta;
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -17,7 +15,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Handler;
 
 public class AnswFormDetController implements Initializable {
 
@@ -33,48 +30,54 @@ public class AnswFormDetController implements Initializable {
     @FXML
     ImageView btnBack,imgDetailsIco;
 
+    UsuarioDAO usuarioDAO = new UsuarioDAO(MySQLConnection.getConnection());
+
     Encuesta encuesta;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
             initGUI();
-
+            initData();
     }
 
     void initGUI()
     {
-        Image image = new Image(getClass().getResource("/Images/back_btn.png").toString());
+        Image image = new Image(getClass().getResource("/Images/Logo/back_btn.png").toString());
         btnBack.setImage(image);
 
-        Image image2 = new Image(getClass().getResource("/Images/details_image.png").toString());
+        Image image2 = new Image(getClass().getResource("/Images/Logo/details_image.png").toString());
         imgDetailsIco.setImage(image2);
-
-         chkP1.setSelected(true);
-         chkP2.setSelected(true);
-         chkP3.setSelected(true);
-         chkP4.setSelected(true);
-         chkP5.setSelected(true);
-         chkP6.setSelected(true);
-         chkP7.setSelected(true);
-         chkP8.setSelected(true);
-         chkP9.setSelected(true);
-         chkP10.setSelected(true);
-         chkP11.setSelected(true);
-         chkP12.setSelected(true);
-         chkP12.setSelected(true);
-         chkP13.setSelected(true);
-
-        lblOtros.setText("F EN EL CHAT");
-        lblName.setText("RICARDO ELPIDO GARCIA FELIX");
-        lblStatus.setText("COVID-19 POSITIVO!");
-
 
         btnBack.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             stage.close();
             event.consume();
         });
 
-
     }
+
+    private void initData(){
+        lblName.setText("Nombre: " +usuarioDAO.getName(encuesta.getCveUsuario()));
+        encuesta.getStatusSintomas();
+        lblStatus.setText("Status: "+encuesta.getStatusSintomatico());
+        chkP1.setSelected(encuesta.isCb1());
+        chkP2.setSelected(encuesta.isCb2());
+        chkP3.setSelected(encuesta.isCb3());
+        chkP4.setSelected(encuesta.isCb4());
+        chkP5.setSelected(encuesta.isCb5());
+        chkP6.setSelected(encuesta.isCb6());
+        chkP7.setSelected(encuesta.isCb7());
+        chkP8.setSelected(encuesta.isCb8());
+        chkP9.setSelected(encuesta.isCb9());
+        chkP10.setSelected(encuesta.isCb10());
+        chkP11.setSelected(encuesta.isCb11());
+        chkP12.setSelected(encuesta.isCb12());
+        chkP13.setSelected(encuesta.isCb13());
+        if(encuesta.getSintomas().equals("")){
+            lblOtros.setText("Ninguno");
+        } else{
+            lblOtros.setText(encuesta.getSintomas());
+        }
+    }
+
 
     public void setForm(Encuesta encuesta){
         this.encuesta = encuesta;

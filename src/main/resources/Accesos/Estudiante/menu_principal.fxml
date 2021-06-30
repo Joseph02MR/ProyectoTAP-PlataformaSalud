@@ -7,41 +7,58 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.estudiante.menu_principalController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="401.0" opacity="0.19" stroke="BLACK" strokeType="INSIDE" width="601.0" />
-      <JFXButton fx:id="btnEncu" buttonType="RAISED" layoutX="146.0" layoutY="125.0" prefHeight="41.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Encuesta">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#309bff" height="401.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="601.0" />
+      <JFXButton fx:id="btnEncu" buttonType="RAISED" layoutX="60.0" layoutY="87.0" prefHeight="71.0" prefWidth="152.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Encuesta" textFill="#fcfcfc">
           <graphic>
-              <FontAwesomeIconView fill="#FFFFFF" glyphName="FILE_TEXT_ALT" glyphSize="20" />
+              <FontAwesomeIconView fill="#FFFFFF" glyphName="FILE_TEXT_ALT" glyphSize="30" text="" />
           </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
 
       </JFXButton>
-      <JFXButton fx:id="btnAler" buttonType="RAISED" layoutX="146.0" layoutY="207.0" prefHeight="41.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Alertas">
+      <JFXButton fx:id="btnAler" buttonType="RAISED" layoutX="60.0" layoutY="201.0" prefHeight="71.0" prefWidth="152.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Alertas" textFill="#eeeeee">
           <graphic>
-              <FontAwesomeIconView fill="#ffffff" glyphName="EXCLAMATION_CIRCLE" glyphSize="20" />
+              <FontAwesomeIconView fill="#ffffff" glyphName="EXCLAMATION_CIRCLE" glyphSize="30" />
           </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
 
       </JFXButton>
-      <JFXButton fx:id="btnOrde" buttonType="RAISED" layoutX="240.0" layoutY="275.0" prefHeight="41.0" prefWidth="130.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Orden de prueba">
+      <JFXButton fx:id="btnOrde" buttonType="RAISED" layoutX="205.0" layoutY="301.0" prefHeight="71.0" prefWidth="192.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Orden de prueba" textFill="WHITE">
           <graphic>
-              <FontAwesomeIconView fill="#ffffff" glyphName="WPFORMS" glyphSize="20" />
+              <FontAwesomeIconView fill="#ffffff" glyphName="WPFORMS" glyphSize="30" />
           </graphic>
+         <font>
+            <Font size="16.0" />
+         </font>
       </JFXButton>
-      <JFXButton fx:id="btnCons" buttonType="RAISED" layoutX="355.0" layoutY="125.0" prefHeight="41.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Consultas">
+      <JFXButton fx:id="btnCons" buttonType="RAISED" layoutX="389.0" layoutY="87.0" prefHeight="71.0" prefWidth="152.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Consultas" textFill="WHITE">
           <graphic>
-              <FontAwesomeIconView fill="#ffffff" glyphName="ADDRESS_BOOK_ALT" glyphSize="20" />
+              <FontAwesomeIconView fill="#ffffff" glyphName="ADDRESS_BOOK_ALT" glyphSize="30" />
           </graphic>
+         <font>
+            <Font size="16.0" />
+         </font>
       </JFXButton>
-      <JFXButton fx:id="btnRece" buttonType="RAISED" layoutX="355.0" layoutY="207.0" prefHeight="41.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Recetas">
+      <JFXButton fx:id="btnRece" buttonType="RAISED" layoutX="389.0" layoutY="201.0" prefHeight="71.0" prefWidth="152.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4" text="Recetas" textFill="WHITE">
           <graphic>
-              <FontAwesomeIconView fill="#ffffff" glyphName="PENCIL_SQUARE_ALT" glyphSize="20" />
+              <FontAwesomeIconView fill="#ffffff" glyphName="PENCIL_SQUARE_ALT" glyphSize="30" />
           </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
       </JFXButton>
-      <Label layoutX="245.0" layoutY="14.0" text="App culera">
+      <Label layoutX="208.0" layoutY="14.0" text="MENU PRINCIPAL">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
       <Separator layoutX="1.0" layoutY="53.0" prefHeight="0.0" prefWidth="600.0" />
+       <FontAwesomeIconView glyphName="WPFORMS" glyphSize="25" layoutX="414.0" layoutY="38.0" />
+       <FontAwesomeIconView glyphName="WPFORMS" glyphSize="25" layoutX="166.0" layoutY="38.0" />
    </children>
 </AnchorPane>

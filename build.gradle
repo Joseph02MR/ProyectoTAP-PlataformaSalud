@@ -19,6 +19,7 @@ dependencies {
     implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
     //compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
     implementation group: 'com.jfoenix', name: 'jfoenix', version: '9.0.1'  //jfoenix
+    implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'  //bootstrap
 
     implementation 'com.itextpdf:itext7-core:7.1.15'
     compile group: 'org.apache.logging.log4j',name: 'log4j-api', version: '2.14.1'

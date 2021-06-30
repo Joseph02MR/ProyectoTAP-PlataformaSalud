@@ -43,6 +43,11 @@ public class Usuario {
         this.edocuenta = edocuenta;
     }
 
+    @Override
+    public String toString() {
+        return this.nombre+" "+this.apellidos;
+    }
+
     public Usuario(int cveUsuario){
         this.cveUsuario = cveUsuario;
     }

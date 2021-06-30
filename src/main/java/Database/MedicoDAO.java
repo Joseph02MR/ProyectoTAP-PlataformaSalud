@@ -67,4 +67,20 @@ public class MedicoDAO {
         }
         return false;
     }
+
+    public String getCedProf(int cveMedico){
+        try{
+            String output = "";
+            String query = "select cedulaProf from medico where cveUsuario = "+cveMedico+";";
+            Statement ps = conn.createStatement();
+            ResultSet rs = ps.executeQuery(query);
+            while(rs.next()) {
+                output = rs.getString("cedulaProf");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

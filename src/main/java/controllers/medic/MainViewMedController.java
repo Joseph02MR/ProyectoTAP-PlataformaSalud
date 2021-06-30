@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 
 public class MainViewMedController implements Initializable {
 
+    int cveUsuario;
     @FXML
     JFXButton btnOrders, btnForms, btnResults, btnRequests;
     @Override
@@ -29,6 +30,10 @@ public class MainViewMedController implements Initializable {
         btnOrders.setOnAction(btnHandler);
         btnResults.setOnAction(btnHandler);
         btnRequests.setOnAction(btnHandler);
+    }
+
+    public void setCveUsuario(int cveUsuario){
+        this.cveUsuario = cveUsuario;
     }
 
     EventHandler<ActionEvent> btnHandler = event ->{
@@ -84,6 +89,7 @@ public class MainViewMedController implements Initializable {
         MedicOrdersController ordersCon = new MedicOrdersController();
         loader.setController(ordersCon);
         ordersCon.setStage(ordersStage);
+        ordersCon.setCveMed(cveUsuario);
         Parent root = loader.load();
         ordersStage.getIcons().add(new Image("/Images/Logo/btq.png"));
         Scene scene = new Scene(root);
@@ -99,6 +105,7 @@ public class MainViewMedController implements Initializable {
         TestResultsController resCon = new TestResultsController();
         loader.setController(resCon);
         resCon.setStage(resStage);
+        resCon.setMed(cveUsuario);
         Parent root = loader.load();
         resStage.getIcons().add(new Image("/Images/Logo/btq.png"));
         Scene scene = new Scene(root);

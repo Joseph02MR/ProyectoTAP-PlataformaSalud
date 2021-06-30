@@ -1,4 +1,4 @@
-package controllers.estudiante;
+package controllers.Estudiante;
 
 import Database.MySQLConnection;
 import Database.OrdenPruebaDAO;
@@ -21,7 +21,7 @@ public class OrderDetailsController implements Initializable {
     @FXML
     JFXButton btnPrint;
     @FXML
-    Label LabelTestType, LabelResult, LabelOrderDate, labelnumOrder;
+    Label LabelTestType, LabelResult, LabelOrderDate, LabelnumOrder;
     OrdenPrueba prueba;
     OrdenPruebaDAO ordenPruebaDAO = new OrdenPruebaDAO(MySQLConnection.getConnection());
 
@@ -34,7 +34,7 @@ public class OrderDetailsController implements Initializable {
     }
 
     private void initGUI(){
-        labelnumOrder.setText(prueba.getCveOrden() +"");
+        LabelnumOrder.setText(prueba.getCveOrden() +"");
         LabelResult.setText(prueba.getResult());
         LabelTestType.setText(prueba.getTestType());
         LabelOrderDate.setText(prueba.getOrderdate().toString());

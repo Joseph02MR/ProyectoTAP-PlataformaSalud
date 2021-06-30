@@ -1,4 +1,4 @@
-package controllers.estudiante;
+package controllers.Estudiante;
 
 import Database.MySQLConnection;
 import Database.OrdenPruebaDAO;
@@ -6,13 +6,13 @@ import Models.OrdenPrueba;
 import com.jfoenix.controls.JFXButton;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class TestOrdersController implements Initializable {
@@ -48,6 +49,8 @@ public class TestOrdersController implements Initializable {
 
     EventHandler<ActionEvent> btnHandler = event -> {
         if (event.getSource() == btnExit){
+            final Node source = (Node) event.getSource();
+            final Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
         }
     };
@@ -58,8 +61,12 @@ public class TestOrdersController implements Initializable {
 
     private void initMenus(){
         MenuItem miView = new MenuItem("Ver detalles");
+        MenuItem realizar = new MenuItem("Marcar Realizada");
         FontAwesomeIconView search = new FontAwesomeIconView(FontAwesomeIcon.SEARCH);
+        FontAwesomeIconView check = new FontAwesomeIconView(FontAwesomeIcon.CHECK_SQUARE_ALT);
+
         miView.setGraphic(search);
+        realizar.setGraphic(check);
 
         miView.setOnAction(event ->{
             try {
@@ -68,9 +75,21 @@ public class TestOrdersController implements Initializable {
                 e.printStackTrace();
             }
         });
-        cmOrders.getItems().add(miView);
-        lvOrders.setContextMenu(cmOrders);
 
+        realizar.setOnAction(event ->{
+            setAsDone(lvOrders.getSelectionModel().getSelectedItem().getCveOrden());
+        });
+        cmOrders.getItems().addAll(miView, realizar);
+        lvOrders.setContextMenu(cmOrders);
+    }
+
+    private void setAsDone(int cveOrden){
+        if(LocalDate.now().isBefore(lvOrders.getSelectionModel().getSelectedItem().getOrderdate())) {
+            //error fecha de prueba aun no llega
+            System.out.println("opción no disponible");
+        } else {
+            ordenPruebaDAO.updateEstadoAsRealizada(cveOrden);
+        }
     }
 
     private void initGUI(){

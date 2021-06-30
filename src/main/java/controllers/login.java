@@ -5,6 +5,7 @@ import Database.UsuarioDAO;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import controllers.Estudiante.menu_principalController;
 import controllers.medic.MainViewMedController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -71,7 +72,6 @@ public class login implements Initializable {
                 }
             }
         }
-
     }
 
     public void getData() throws IOException {
@@ -88,14 +88,18 @@ public class login implements Initializable {
 
     private void initNormalView() throws IOException {
         System.out.println("entered Normal view");
-        Stage login = new Stage();
-        login.setTitle("Creating User");
-        Parent root = FXMLLoader.load(getClass().getResource("/Accesos/Estudiante/menu_principal.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Menu Principal");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/Estudiante/menu_principal.fxml"));
+        menu_principalController controller = new menu_principalController();
+        controller.setCveUsuario(TuplaAux[0]);
+        loader.setController(controller);
+        Parent root = loader.load();
+        stage.getIcons().add(new Image("/Images/Logo/btq.png"));
         Scene scene = new Scene(root);
-        login.setScene(scene);
-        login.setResizable(false);
-        login.show();
-
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 
     private void initUser() throws IOException {
@@ -117,7 +121,6 @@ public class login implements Initializable {
         login.setScene(scene);
         login.setResizable(false);
         login.show();
-
     }
 
     private void initMedView() throws IOException {
@@ -127,6 +130,7 @@ public class login implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/Medico/medicMain_view.fxml"));
         MainViewMedController medicCon = new MainViewMedController();
         loader.setController(medicCon);
+        medicCon.setCveUsuario(TuplaAux[0]);
         Parent root = loader.load();
         login.getIcons().add(new Image("/Images/Logo/btq.png"));
         Scene scene = new Scene(root);

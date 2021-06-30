@@ -1,4 +1,4 @@
-package controllers.admin;
+package controllers.Admin;
 
 import Database.MySQLConnection;
 import Database.Views.UserReportsDAO;

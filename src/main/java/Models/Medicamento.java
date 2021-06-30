@@ -1,26 +1,42 @@
 package Models;
 
 public class Medicamento {
-    private String cveMed;
+    private int cveMed;
     private String nombre;
-    private String unidadMedida;
-
-
+    private String dosis;
 
     public Medicamento() {
     }
 
-    public Medicamento(String cveMed, String nombre, String unidadMedida) {
+    public Medicamento(int cveMed, String nombre) {
         this.cveMed = cveMed;
         this.nombre = nombre;
-        this.unidadMedida = unidadMedida;
     }
 
-    public String getCveMed() {
+    public Medicamento(int cveMed, String nombre, String dosis) {
+        this.cveMed = cveMed;
+        this.nombre = nombre;
+        this.dosis = dosis;
+    }
+
+    public String getDosis() {
+        return dosis;
+    }
+
+    public void setDosis(String dosis) {
+        this.dosis = dosis;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+
+    public int getCveMed() {
         return cveMed;
     }
 
-    public void setCveMed(String cveMed) {
+    public void setCveMed(int cveMed) {
         this.cveMed = cveMed;
     }
 
@@ -32,11 +48,4 @@ public class Medicamento {
         this.nombre = nombre;
     }
 
-    public String getUnidadMedida() {
-        return unidadMedida;
-    }
-
-    public void setUnidadMedida(String unidadMedida) {
-        this.unidadMedida = unidadMedida;
-    }
 }

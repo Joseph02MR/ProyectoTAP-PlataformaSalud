@@ -4,9 +4,12 @@ import java.time.LocalDate;
 
 public class OrdenPrueba {
     private int cveOrden;
+    private UsuarioLista usuario;
+    private int cveMed;
     private String result;
     private LocalDate Orderdate;
     private String testType;
+    private String status;
 
     public static String[] testTypes = {"PCR (Reaccion en Cadena de la Polimerasa)",
             "Prueba Rapida de Antigeno", "Prueba Rapida de Sangre", "Prueba no valida"};
@@ -17,13 +20,63 @@ public class OrdenPrueba {
         this.testType = testTypes[3];
         this.result = results[2];
     }
+    //usada para insertar en la base de datos
+    public OrdenPrueba(UsuarioLista usuario, int cveMed, String result, LocalDate orderdate, String testType) {
+        this.usuario = usuario;
+        this.cveMed = cveMed;
+        this.result = result;
+        Orderdate = orderdate;
+        this.testType = testType;
+        this.status = "Pendiente";
+    }
 
-    public OrdenPrueba(int cveOrden, String result, LocalDate orderdate, String testType) {
+    public OrdenPrueba(int cveOrden, UsuarioLista usuario, String result, LocalDate orderdate, String testType, String status) {
+        this.cveOrden = cveOrden;
+        this.usuario = usuario;
+        this.result = result;
+        Orderdate = orderdate;
+        this.testType = testType;
+        this.status = status;
+    }
+
+    @Override
+    public String toString(){
+        return "Fecha: " + Orderdate +  " Estado: "+status;
+    }
+
+    //usada para recibir info de la base de datos
+    public OrdenPrueba(int cveOrden, String result, LocalDate orderdate, String testType, String status) {
         this.cveOrden = cveOrden;
         this.result = result;
         Orderdate = orderdate;
         this.testType = testType;
+        this.status = status;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public UsuarioLista getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioLista usuario) {
+        this.usuario = usuario;
+    }
+
+    public int getCveMed() {
+        return cveMed;
+    }
+
+    public void setCveMed(int cveMed) {
+        this.cveMed = cveMed;
+    }
+
 
     public int getCveOrden() {
         return cveOrden;
@@ -33,14 +86,6 @@ public class OrdenPrueba {
         this.cveOrden = cveOrden;
     }
 
-    @Override
-    public String toString(){
-        if(this.result == results[2]){
-            return "Fecha de expedicion: " + Orderdate +  " Estado: pendiente";
-        } else{
-            return "Fecha de expedicion: " + Orderdate +  " Estado: finalizada";
-        }
-    }
 
     public String getResult() {
         return result;

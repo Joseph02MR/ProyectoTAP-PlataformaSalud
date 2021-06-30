@@ -1,4 +1,5 @@
-package controllers.admin;
+package controllers.Admin;
+
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -19,10 +20,7 @@ import java.util.ResourceBundle;
 
 public class menu_adminController implements Initializable {
     @FXML
-    JFXButton btnEstu,btnPers,btnCarr,btnDepa,btnMedi,btnHabiCuen,btnCont,btnGeneRepo,btnHistRepo;
-    @FXML
-    ComboBox cbDBList;
-
+    JFXButton btnCatList,btnGeneRepo,btnHistRepo,btnHabiCuen;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -31,10 +29,9 @@ public class menu_adminController implements Initializable {
     }
 
     private void initGUI(){
-        btnEstu.setOnAction(btnHandler);
+        btnCatList.setOnAction(btnHandler);
         btnGeneRepo.setOnAction(btnHandler);
         btnHistRepo.setOnAction(btnHandler);
-        btnCont.setOnAction(btnHandler);
         btnHabiCuen.setOnAction(btnHandler);
     }
 
@@ -45,12 +42,14 @@ public class menu_adminController implements Initializable {
 
     EventHandler<ActionEvent> btnHandler = event -> {
         try{
-            if (event.getSource() == btnEstu) {
+            if (event.getSource() == btnCatList) {
                 initDBList();
             } else if(event.getSource() == btnHistRepo){
                 initHistRepo();
             } else if(event.getSource() == btnGeneRepo){
                 initGenReps();
+            }else if(event.getSource() == btnHabiCuen){
+                initHabiCuen();
             }
         } catch (IOException e){
             e.printStackTrace();
@@ -60,12 +59,12 @@ public class menu_adminController implements Initializable {
     private void initDBList() throws IOException {
         Stage stage = new Stage();
         stage.setTitle("Catalogo de Tablas");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/admin/dbList_view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/dbList_view.fxml"));
         DBListController controller = new DBListController();
         loader.setController(controller);
         controller.setStage(stage);
         Parent root = loader.load();
-        stage.getIcons().add(new Image("/Images/Logo/btq.png"));
+       // stage.getIcons().add(new Image("/Images/Logo/btq.png"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
@@ -75,7 +74,7 @@ public class menu_adminController implements Initializable {
     private void initHistRepo() throws IOException {
         Stage stage = new Stage();
         stage.setTitle("Historial de Reportes");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/admin/repo_hist_view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/repo_hist_view.fxml"));
         ReportHistController controller = new ReportHistController();
         loader.setController(controller);
         controller.setStage(stage);
@@ -89,7 +88,20 @@ public class menu_adminController implements Initializable {
     private void initGenReps() throws IOException {
         Stage stage = new Stage();
         stage.setTitle("Generacion de Reportes");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/General/gen_repo_view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/gen_repo_view.fxml"));
+        //controller.setStage(stage);
+        Parent root = loader.load();
+        stage.getIcons().add(new Image("/Images/Logo/btq.png"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+    private void initHabiCuen() throws IOException
+    {
+        Stage stage = new Stage();
+        stage.setTitle("Administracion de cuentas");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accesos/admin_users.fxml"));
         //controller.setStage(stage);
         Parent root = loader.load();
         stage.getIcons().add(new Image("/Images/Logo/btq.png"));

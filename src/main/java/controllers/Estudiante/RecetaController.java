@@ -1,4 +1,4 @@
-package controllers.estudiante;
+package controllers.Estudiante;
 
 import Database.MySQLConnection;
 import Database.RecetaDAO;
@@ -50,8 +50,9 @@ public class RecetaController implements Initializable {
         initData();
         initmenu();
     }
-    public void setCveUser(int cveUser){
-        this.cveUser = cveUser;
+
+    public void setUser(int cveUsuario){
+        this.cveUser = cveUsuario;
     }
 
     private void initData(){

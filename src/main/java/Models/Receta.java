@@ -16,6 +16,7 @@ public class Receta {
     }
 
 
+
     public String toString(){
         return "No.Receta: " +noReceta + " - Fecha de Generacion: "+date;
     }
