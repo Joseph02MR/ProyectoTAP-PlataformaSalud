@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#164d80" height="90.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#394e61" height="314.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Text fill="#b9adad" layoutX="106.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GENERAR CITA" textAlignment="CENTER" wrappingWidth="388.13671875">
+         <font>
+            <Font name="Berlin Sans FB" size="36.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnreturn" buttonType="RAISED" layoutX="27.0" layoutY="34.0" prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #d49426;-fx-font-weight: bold" text="RETURN" />
+      <Label layoutX="13.0" layoutY="118.0" prefHeight="21.0" prefWidth="78.0" text="NOMBRE:" textFill="#dad9d9" />
+      <Label layoutX="13.0" layoutY="163.0" text="APELLIDOS:" textFill="#f5f5f5" />
+      <Label layoutX="13.0" layoutY="211.0" text="TIPO CONSULTA:" textFill="#fffdfd" />
+      <Text fill="WHITE" layoutX="13.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SÍNTOMAS:" />
+      <TextArea fx:id="tasintomas" layoutX="80.0" layoutY="251.0" prefHeight="90.0" prefWidth="195.0" />
+      <JFXButton fx:id="btnPruebas" buttonType="RAISED" layoutX="135.0" layoutY="352.0" prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #2280ca;-fx-font-weight: bold" text="Evidencias" />
+      <Text fx:id="Nombre" fill="#eeeeee" layoutX="69.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" style="-fx-font-weight: bold">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fx:id="Apellido" fill="#fffbfb" layoutX="80.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" style="-fx-font-weight: bold">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="374.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ARCHIVOS/EVIDENCIA" textAlignment="CENTER" wrappingWidth="156.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Separator layoutX="300.0" layoutY="92.0" orientation="VERTICAL" prefHeight="306.0" prefWidth="0.0" />
+      <ListView fx:id="LVARCHIVOS" layoutX="321.0" layoutY="117.0" prefHeight="214.0" prefWidth="246.0" />
+      <ComboBox fx:id="cbtipoconsulta" layoutX="125.0" layoutY="207.0" prefWidth="150.0" promptText="Modalidad" />
+      <JFXButton fx:id="btncreate" buttonType="RAISED" layoutX="388.0" layoutY="352.0" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #2280ca;-fx-font-weight: bold" text="crear consulta" />
+   </children>
+</AnchorPane>

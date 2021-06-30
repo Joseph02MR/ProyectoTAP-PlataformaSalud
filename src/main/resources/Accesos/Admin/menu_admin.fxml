@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Admin.menu_adminController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2378c3" height="400.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Separator layoutX="231.0" layoutY="39.0" orientation="VERTICAL" prefHeight="306.0" prefWidth="16.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.14901961386203766" green="0.545098066329956" blue="0.8313725590705872" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Separator>
+      <Label layoutX="75.0" layoutY="39.0" prefHeight="26.0" prefWidth="118.0" text="   Ver listas " textFill="#13486b">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnCatList" buttonType="RAISED" layoutX="86.0" layoutY="93.0" prefHeight="25.0" prefWidth="125.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4; -fx-graphic-text-gap:10" text="Ver catalogo" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="#ffffff" glyphName="LIST" glyphSize="20" />
+         </graphic>
+      </JFXButton>
+      <Label layoutX="316.0" layoutY="37.0" text="Administrar cuentas" textFill="#13486b">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnHabiCuen" buttonType="RAISED" layoutX="323.0" layoutY="87.0" prefHeight="40.0" prefWidth="175.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4; -fx-graphic-text-gap:10" text="Des/Habilitar cuentas" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="#ffffff" glyphName="WRENCH" glyphSize="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnGeneRepo" buttonType="RAISED" layoutX="331.0" layoutY="149.0" prefHeight="40.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4; -fx-graphic-text-gap:10" text="Generar reportes" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="#ffffff" glyphName="FILE_PDF_ALT" glyphSize="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnHistRepo" buttonType="RAISED" layoutX="331.0" layoutY="212.0" prefHeight="40.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: #268bd4; -fx-graphic-text-gap:10" text="Historial de reportes" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="#ffffff" glyphName="CLOCK_ALT" glyphSize="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnout" buttonType="RAISED" layoutX="14.0" layoutY="354.0" prefHeight="32.0" prefWidth="82.0" ripplerFill="WHITE" style="-fx-background-color: #e98710" text="Exit" textFill="#030303" />
+   </children>
+</AnchorPane>

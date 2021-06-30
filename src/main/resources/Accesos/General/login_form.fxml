@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.image.ImageView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?><?import javafx.scene.text.TextFlow?><?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="controllers.login"
+    prefHeight="400.0" prefWidth="600.0">
+
+    <center>
+
+        <HBox alignment="CENTER_LEFT" spacing="18">
+            <AnchorPane>
+                <ImageView fx:id="logo" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="20" fitWidth="100"
+                    fitHeight="100">
+                </ImageView>
+            </AnchorPane>
+            <VBox alignment="CENTER" spacing="30">
+                <Label text="LOGIN OR REGISTER"/>
+                <HBox spacing="5">
+                    <FontAwesomeIconView glyphName="USERS" glyphSize="18" fill="whitesmoke">
+                    </FontAwesomeIconView>
+
+                    <JFXTextField fx:id="tfUser" promptText="CORREO" focusColor="darkorange" unFocusColor="#141cd7"
+                        labelFloat="true" maxWidth="180"/>
+                </HBox>
+                <HBox spacing="5">
+                    <FontAwesomeIconView glyphName="LOCK" glyphSize="20" fill="whitesmoke">
+                    </FontAwesomeIconView>
+
+                    <JFXPasswordField fx:id="tfPassword" promptText="PASSWORD" focusColor="darkorange"
+                        unFocusColor="#141cd7" labelFloat="true" maxWidth="200"/>
+                </HBox>
+                <JFXButton fx:id="btnLogin" text="LOGIN" buttonType="RAISED" style="-fx-background-color: #268bd4"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <AnchorPane>
+            <VBox spacing="10" alignment="CENTER" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20">
+                <Label text="Do not have an account?"/>
+                <JFXButton fx:id="btnRegister"  text="Register" buttonType="FLAT" style="-fx-background-color: #5aca5a"/>
+            </VBox>
+        </AnchorPane>
+    </bottom>
+
+
+</BorderPane>

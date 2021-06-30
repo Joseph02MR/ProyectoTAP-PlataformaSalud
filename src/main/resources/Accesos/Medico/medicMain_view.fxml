@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+    <VBox alignment="CENTER" maxWidth="500" prefHeight="300" spacing="80" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.topAnchor="5">
+
+        <HBox alignment="CENTER" maxWidth="250" style="-fx-background-color: #268bd4" spacing="10">
+            <FontAwesomeIconView glyphName="LIST_ALT" fill="WHITE" glyphSize="18" />
+            <Label style="-fx-font-size:20" text="Panel de médico" textFill="WHITE" />
+            <FontAwesomeIconView glyphName="LIST_ALT" fill="WHITE" glyphSize="18"/>
+        </HBox>
+
+        <GridPane alignment="CENTER" hgap="10" maxWidth="400" style="-fx-font-size:18" vgap="10">
+
+            <JFXButton fx:id="btnForms" alignment="CENTER" buttonType="FLAT" style="-fx-graphic-text-gap:20; -fx-background-color: #268bd4" text="Encuestras Respondidas" textFill="WHITE" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <graphic>
+                    <FontAwesomeIconView fill="WHITE" glyphName="LIST_ALT" glyphSize="25" />
+                </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnResults" buttonType="FLAT" style="-fx-graphic-text-gap:20; -fx-background-color: #268bd4" text="Registro de Resultados" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <graphic>
+                    <FontAwesomeIconView fill="WHITE" glyphName="FOLDER_OPEN_ALT" glyphSize="25" />
+                </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnOrders" buttonType="FLAT" style="-fx-graphic-text-gap:10; -fx-background-color: #268bd4" text="Levantar Orden de Prueba" textFill="WHITE" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <graphic>
+                    <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE_ALT" glyphSize="25" />
+                </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnRequests" buttonType="FLAT" style="-fx-graphic-text-gap:20; -fx-background-color: #268bd4" text="Solicitudes de Consulta" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <graphic>
+                    <FontAwesomeIconView fill="WHITE" glyphName="USER_PLUS" glyphSize="25" />
+                </graphic>
+            </JFXButton>
+        </GridPane>
+    </VBox>
+    <JFXButton fx:id="btnout" buttonType="RAISED" layoutX="14.0" layoutY="10.0" prefHeight="32.0" prefWidth="82.0" ripplerFill="WHITE" style="-fx-background-color: #e98710" text="Exit" textFill="#030303" />
+
+</AnchorPane>

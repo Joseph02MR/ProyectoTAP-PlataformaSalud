@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?><?import java.util.*?><?import javafx.scene.*?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?><?import de.jensd.fx.glyphs.emojione.EmojiOneView?><?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?><?import com.jfoenix.controls.JFXButton?><?import javafx.geometry.Insets?><?import javafx.scene.control.skin.SplitPaneSkin.Content?><?import javafx.scene.image.ImageView?><?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+    prefHeight="400.0" prefWidth="600.0" fx:controller="controllers.Estudiantes.TestOrdersController">
+
+    <BorderPane AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.topAnchor="5">
+        <padding>
+            <Insets topRightBottomLeft="5" />
+        </padding>
+
+        <top>
+            <HBox alignment="CENTER" spacing="10">
+                <padding>
+                    <Insets topRightBottomLeft="5" />
+                </padding>
+                <FontAwesomeIconView glyphName="WPFORMS" glyphSize="25" />
+                <Label text="Ordenes de Prueba" style="-fx-font-size:20;-fx-font-weight:bold"
+                    textAlignment="CENTER"/>
+                <FontAwesomeIconView glyphName="WPFORMS" glyphSize="25" />
+            </HBox>
+        </top>
+        <center>
+            <ListView fx:id="lvOrders" style="-fx-font-size:16" fixedCellSize="40">
+
+            </ListView>
+        </center>
+        <bottom>
+            <HBox alignment="BASELINE_CENTER" spacing="20">
+                <padding>
+                    <Insets topRightBottomLeft="5"/>
+                </padding>
+                <JFXButton  fx:id="btnExit" text="Salir" buttonType="FLAT" style="-fx-background-color: #d49426">
+                    <graphic>
+                        <MaterialDesignIconView glyphName="EXIT_TO_APP" />
+                    </graphic>
+                </JFXButton>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

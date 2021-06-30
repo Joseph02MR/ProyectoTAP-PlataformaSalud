@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.RegisterController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <padding>
+        <Insets left="50.0"/>
+    </padding>
+
+    <left>
+        <VBox alignment="CENTER" spacing="20">
+            <HBox spacing="5" />
+            <HBox spacing="5">
+                <Icons525View fill="#020202" glyphName="GMAIL" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfEmail" focusColor="darkorange" labelFloat="true" maxWidth="180" promptText="correo electronico" unFocusColor="#141cd7" />
+            </HBox>
+            <HBox spacing="5">
+                <FontAwesomeIconView fill="#020202" glyphName="LOCK" glyphSize="28">
+                </FontAwesomeIconView>
+                <JFXPasswordField fx:id="jppassword" focusColor="darkorange" labelFloat="true" maxWidth="180" promptText="contraseña" unFocusColor="#141cd7" />
+            </HBox>
+            <HBox spacing="5">
+                <Icons525View fill="#020202" glyphName="COMMENT2" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfNAME" focusColor="darkorange" labelFloat="true" maxWidth="180" promptText="nombres" unFocusColor="#141cd7" />
+            </HBox>
+            <HBox spacing="5">
+                <Icons525View fill="#020202" glyphName="COMMENT2" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfLastNAME" focusColor="darkorange" labelFloat="true" maxWidth="180" promptText="apellidos" unFocusColor="#141cd7" />
+            </HBox>
+            <HBox spacing="5">
+                <Icons525View fill="#020202" glyphName="INT_GENTS" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfGENDER" focusColor="darkorange" labelFloat="true" maxWidth="180" promptText="genero (F o M)" unFocusColor="#141cd7" />
+            </HBox>
+            <HBox spacing="5">
+                <Icons525View fill="#020202" glyphName="CALENDAR" glyphSize="18">
+                </Icons525View>
+                <DatePicker fx:id="dpBD" promptText="Fecha de Nacimiento" />
+            </HBox>
+            <HBox spacing="10">
+                <JFXButton fx:id="btnCreate" buttonType="RAISED" style="-fx-background-color: #39a750" text="Crear usuario" />
+                <JFXButton fx:id="btnCancel" buttonType="RAISED" style="-fx-background-color: crimson" text="Cancelar" />
+            </HBox>
+        </VBox>
+    </left>
+    <center>
+        <Separator orientation="VERTICAL"/>
+    </center>
+    <right>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets right="70" />
+            </padding>
+            <HBox spacing="5" />
+            <HBox spacing="5" >
+                <FontAwesomeIconView fill="#020202" glyphName="LOCK" glyphSize="28">
+                </FontAwesomeIconView>
+                <ComboBox fx:id="cbtipoUser" prefWidth="150" promptText="Tipo de Usuario"/>
+            </HBox>
+            <HBox spacing="5" fx:id="h1">
+                <Icons525View fill="#020202" glyphName="GMAIL" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfRFC_NoC" promptText="RFC / NoCtrl" focusColor="darkorange" unFocusColor="#141cd7"
+                              labelFloat="true" maxWidth="180"/>
+            </HBox>
+            <HBox spacing="5" fx:id="h2">
+                <Icons525View fill="#020202" glyphName="COMMENT2" glyphSize="18">
+                </Icons525View>
+                <ComboBox fx:id="cbCarreraDepto" prefWidth="150" promptText=" Carrera / Depto"/>
+            </HBox>
+            <HBox spacing="5" fx:id="h3">
+                <Icons525View fill="#020202" glyphName="COMMENT2" glyphSize="18">
+                </Icons525View>
+                <ComboBox fx:id="cbSemestre" prefWidth="150" promptText="Semestre"/>
+            </HBox>
+            <HBox spacing="5" fx:id="h4">
+                <Icons525View fill="#020202" glyphName="CALENDAR" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfcedprof" promptText="Cédula Profesional" focusColor="darkorange" unFocusColor="#141cd7"
+                              labelFloat="true" maxWidth="180"/>
+            </HBox>
+            <HBox spacing="5" fx:id="h5">
+                <Icons525View fill="#020202" glyphName="INT_GENTS" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfespecialidad" promptText="Especialidad" focusColor="darkorange" unFocusColor="#141cd7"
+                              labelFloat="true" maxWidth="180"/>
+            </HBox>
+            <HBox spacing="5" fx:id="h6">
+                <Icons525View fill="#020202" glyphName="CALENDAR" glyphSize="18">
+                </Icons525View>
+                <JFXTextField fx:id="tfhorario" promptText="Horario" focusColor="darkorange" unFocusColor="#141cd7"
+                              labelFloat="true" maxWidth="180"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>
